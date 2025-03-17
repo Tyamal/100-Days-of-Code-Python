@@ -1,9 +1,7 @@
 # 100-Days-of-Code-Python
 bljrr ngetikk gusyyy challenges baru belajar python
 
-# 🌟 100 Days of Code - Python 🌟
-
-Selamat datang di repositorinyaa Mala challenges **100 Days of Code**! 
+# 🌟 100 Days of Code - Python gusyyy🌟
 
 ---
 
