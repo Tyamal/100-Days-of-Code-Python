@@ -59,3 +59,21 @@ class BlackjackGame:
         for _ in range(2):
             self.player.add_card(self.deck.deal_card())
             self.dealer.add_card(self.deck.deal_card())
+
+    def display_hands(self, reveal_dealer=False):
+        print(self.player)
+        if reveal_dealer:
+            print(self.dealer)
+        else:
+            print(f"Dealer's hand: {self.dealer.hand[0]}, [Hidden]")
+
+    def player_turn(self):
+        while True:
+            self.display_hands()
+            if self.player.hand_value() > 21:
+                print("Player busts! Dealer wins.")
+                return False
+            action = input("Do you want to hit or stand? (h/s): ").lower()
+            if action == 'h':
+                self.player.add_card(self.deck.deal_card())
+            elif action == 's':
