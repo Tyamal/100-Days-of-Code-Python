@@ -48,3 +48,14 @@ class Player:
     def __str__(self):
         return f"{self.name}'s hand: " + ', '.join(str(card) for card in self.hand)
 
+# Kelas untuk permainan Blackjack
+class BlackjackGame:
+    def __init__(self):
+        self.deck = Deck()
+        self.player = Player("Player")
+        self.dealer = Player("Dealer")
+
+    def initial_deal(self):
+        for _ in range(2):
+            self.player.add_card(self.deck.deal_card())
+            self.dealer.add_card(self.deck.deal_card())
