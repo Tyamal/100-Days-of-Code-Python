@@ -11,3 +11,7 @@ class Card:
             return 10
         elif self.rank == 'A':
             return 11  # Aces can be 1 or 11, handled later
+        else:
+            return int(self.rank)
+
+    def __str__(self):
