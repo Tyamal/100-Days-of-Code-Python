@@ -15,3 +15,7 @@ class Card:
             return int(self.rank)
 
     def __str__(self):
+        return f"{self.rank} of {self.suit}"
+
+# Kelas untuk dek
+class Deck:
