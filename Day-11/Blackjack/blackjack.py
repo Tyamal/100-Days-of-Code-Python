@@ -77,3 +77,35 @@ class BlackjackGame:
             if action == 'h':
                 self.player.add_card(self.deck.deal_card())
             elif action == 's':
+                break
+            else:
+                print("Invalid input. Please enter 'h' or 's'.")
+
+        return True
+
+    def dealer_turn(self):
+        while self.dealer.hand_value() < 17:
+            self.dealer.add_card(self.deck.deal_card())
+
+    def determine_winner(self):
+        player_value = self.player.hand_value()
+        dealer_value = self.dealer.hand_value()
+        print(self.player)
+        print(self.dealer)
+
+        if dealer_value > 21 or player_value > dealer_value:
+            print("Player wins!")
+        elif player_value < dealer_value:
+            print("Dealer wins!")
+        else:
+            print("It's a tie!")
+
+    def play(self):
+        self.initial_deal()
+        if self.player_turn():
+            self.dealer_turn()
+            self.determine_winner()
+
+if __name__ == "__main__":
+    game = BlackjackGame()
+    game.play()
