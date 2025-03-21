@@ -32,3 +32,19 @@ class Player:
     def __init__(self, name):
         self.name = name
         self.hand = []
+
+    def add_card(self, card):
+        self.hand.append(card)
+
+    def hand_value(self):
+        value = sum(card.value() for card in self.hand)
+        # Adjust for Aces
+        aces = sum(1 for card in self.hand if card.rank == 'A')
+        while value > 21 and aces:
+            value -= 10
+            aces -= 1
+        return value
+
+    def __str__(self):
+        return f"{self.name}'s hand: " + ', '.join(str(card) for card in self.hand)
+
